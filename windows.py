@@ -1,12 +1,9 @@
 import yolov5
-from pyHM import mouse
 import dxcam
-camera = dxcam.create()
-
+import mouse
 import time
-
+camera = dxcam.create()
 # Grab the center of the screen 416x416
-
 im = camera.grab()
 
 model = yolov5.load('valorant-v12.pt')

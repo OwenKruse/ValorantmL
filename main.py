@@ -1,4 +1,5 @@
 import yolov5
+import mouse
 
 "Grab the part of the screen"
 import pyscreenshot as ImageGrab
@@ -41,8 +42,7 @@ center = (boxes[:, 0] + boxes[:, 2]) // 2, (boxes[:, 1] + boxes[:, 3]) // 2
 center = int(center[0]), int(center[1])
 
 # Move the mouse to the center of the box
-
-
+mouse.move(center[0], center[1])
 
 
 
