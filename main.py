@@ -35,7 +35,15 @@ scores = predictions[:, 4]
 categories = predictions[:, 5]
 
 # Find the center of the box
+
 center = (boxes[:, 0] + boxes[:, 2]) // 2, (boxes[:, 1] + boxes[:, 3]) // 2
+
+center = int(center[0]), int(center[1])
+
+# Move the mouse to the center of the box
+
+
+
 
 
 

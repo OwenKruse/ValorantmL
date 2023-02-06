@@ -37,7 +37,7 @@ center = (boxes[:, 0] + boxes[:, 2]) // 2, (boxes[:, 1] + boxes[:, 3]) // 2
 
 # Move the mouse to the center of the box
 # Log the center of the box
-print(center)
+center = int(center[0]), int(center[1])
 mouse.move(center[0], center[1])
 
 
