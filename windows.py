@@ -1,7 +1,7 @@
 import yolov5
 import dxcam
-import mouse
 import time
+from pynput.mouse import Button, Controller
 camera = dxcam.create()
 # Grab the center of the screen 416x416
 im = camera.grab()
@@ -35,7 +35,10 @@ center = (boxes[:, 0] + boxes[:, 2]) // 2, (boxes[:, 1] + boxes[:, 3]) // 2
 # Move the mouse to the center of the box
 # Log the center of the box
 center = int(center[0]), int(center[1])
-mouse.move(center[0], center[1])
+
+# Move the mouse to the center of the box
+mouse = Controller()
+mouse.position = center
 
 
 

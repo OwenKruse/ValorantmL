@@ -1,9 +1,8 @@
 import yolov5
-import mouse
-
 "Grab the part of the screen"
 import pyscreenshot as ImageGrab
 import time
+import pyautogui
 
 # Grab the center of the screen 416x416
 
@@ -26,9 +25,6 @@ start = time.time()
 results = model(img, size=640)
 print(f'Done. ({time.time() - start:.3f}s)')
 
-results.show()
-
-
 # parse results
 predictions = results.pred[0]
 boxes = predictions[:, :4] # x1, y1, x2, y2
@@ -42,7 +38,7 @@ center = (boxes[:, 0] + boxes[:, 2]) // 2, (boxes[:, 1] + boxes[:, 3]) // 2
 center = int(center[0]), int(center[1])
 
 # Move the mouse to the center of the box
-mouse.move(center[0], center[1])
+pyautogui.moveTo(center[0], center[1])
 
 
 
